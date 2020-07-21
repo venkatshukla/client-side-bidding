@@ -1,0 +1,11 @@
+{
+    "server":{
+        "port": 3000,
+        "cors-whitelist": [
+
+        ],
+        "cors-allow-local": false
+    },
+    "api-env": "development",
+    "api-version": 1
+}

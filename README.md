@@ -1,1 +1,1 @@
-# client-side-bidding
+# public api for client-side-bidding project
