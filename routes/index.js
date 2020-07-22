@@ -5,11 +5,13 @@ const config = require('config');
 function loadRoutes(app) {
 
     // eslint-disable-next-line no-undef
-    glob.sync(`${__dirname}/${config.get('api-version')}/*.js`).forEach(function(file) {
-        app.use('/' + config.get('api-version') + '/', require(path.resolve(file)));   
+    glob.sync(`${__dirname}/v${config.get('api-version')}/*.js`).forEach(function(file) {
+        app.use('/v' + config.get('api-version') + '/', require(path.resolve(file)));   
     });
  
     handle404Error(app);
+
+    console.log('Routes Loaded Successfully');
 
 }
 

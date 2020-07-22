@@ -6,6 +6,14 @@
         ],
         "cors-allow-local": false
     },
+    "db":{
+        "username": "",
+        "password": "",
+        "isCluster": false,
+        "name": "client-side-bidder",
+        "host": "localhost",
+        "port": 27017
+    },
     "api-env": "development",
     "api-version": 1
 }
