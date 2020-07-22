@@ -2,7 +2,7 @@
     "server":{
         "port": 3000,
         "cors-whitelist": [
-
+            "https://venkatshukla.github.io/"
         ],
         "cors-allow-local": true
     },

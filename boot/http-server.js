@@ -24,32 +24,33 @@ function setupServer(app){
     );
     app.use(bodyParser.json());
 
+    //app.use(cors());
     /* Check CORS before proceeding further */
-    // app.use(
-    //     cors({
-    //         origin: function (origin, callback) {
-    //             if (
-    //                 SERVER_CONF['cors-whitelist'].indexOf(origin) !== -1 
-    //                 || 
-    //                 SERVER_CONF['cors-allow-local']
-    //             ) {
-    //             // error - null, allowOrigin - true
-    //                 callback(null, true);
-    //             } else {
-    //                 app.use(function (err, req, res) {
-    //                     res.status(403).json({
-    //                         success: false,
-    //                         statusCode: 'NOT_ALLOWED_BY_CORS',
-    //                         message: 'You are not allowed to access this resource',
-    //                         data: {},
-    //                     });
-    //                 });
-    //                 // error - true, allowOrigin - false
-    //                 callback(true, false);
-    //             }
-    //         },
-    //     })
-    // );
+    app.use(
+        cors({
+            origin: function (origin, callback) {
+                if (
+                    SERVER_CONF['cors-whitelist'].indexOf(origin) !== -1 
+                    || 
+                    SERVER_CONF['cors-allow-local']
+                ) {
+                // error - null, allowOrigin - true
+                    callback(null, true);
+                } else {
+                    app.use(function (err, req, res) {
+                        res.status(403).json({
+                            success: false,
+                            statusCode: 'NOT_ALLOWED_BY_CORS',
+                            message: 'You are not allowed to access this resource',
+                            data: {},
+                        });
+                    });
+                    // error - true, allowOrigin - false
+                    callback(true, false);
+                }
+            },
+        })
+    );
 
     /* Helmet middleware for secure headers */
     app.use(helmet());
@@ -58,7 +59,7 @@ function setupServer(app){
     app.use((err, req, next, res) => {
         handleError(err, res);
     });
-    
+
     /* Health End point */
     app.get('/health', (req, res) => {
         return res.status(200).json({

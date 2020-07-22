@@ -2,16 +2,16 @@
     "server":{
         "port": 3000,
         "cors-whitelist": [
-
+                "https://venkatshukla.github.io/"
         ],
         "cors-allow-local": false
     },
     "db":{
-        "username": "",
-        "password": "",
-        "isCluster": false,
+        "username": "gst_saver_dev",
+        "password": "yCpg96gzguR85r0i",
+        "isCluster": true,
         "name": "client-side-bidder",
-        "host": "localhost",
+        "host": "venkat-dev.8jj1j.azure.mongodb.net",
         "port": 27017
     },
     "api-env": "development",
