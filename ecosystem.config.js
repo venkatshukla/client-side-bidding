@@ -12,7 +12,7 @@ module.exports = {
             NODE_ENV: 'production',
         },
         env_development: {
-            NODE_ENV: 'staging',
+            NODE_ENV: 'development',
         }
     }
     ]
