@@ -1,6 +1,6 @@
 module.exports = {
     apps : [{
-        name: 'public-api',
+        name: 'bidding-public-api',
         script: './index.js',
         watch: false,
         instances : '2',

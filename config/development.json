@@ -4,7 +4,7 @@
         "cors-whitelist": [
                 "https://venkatshukla.github.io/"
         ],
-        "cors-allow-local": false
+        "cors-allow-local": true
     },
     "db":{
         "username": "gst_saver_dev",
